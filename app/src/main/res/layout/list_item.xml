@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:weightSum="11">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="horizontal"
+        android:paddingTop="6dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="6dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_profile"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/user_profile_picture"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_toRightOf="@+id/user_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="chrisconnolly"
+            android:textSize="20sp"
+            android:textColor="#0a557f"
+            android:layout_marginLeft="10dp" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/clock"
+            android:layout_toLeftOf="@+id/time"
+            android:alpha="0.3" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text="10h"
+            android:textSize="20sp"
+            android:textColor="#b4b8bb"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:padding="0dp">
+
+        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/FrameLayout">
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/demo"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/main_image" />
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/play_icon"
+                android:id="@+id/play"
+                android:alpha="0.5"
+                android:visibility="gone"
+                android:layout_gravity="center" />
+
+
+        </FrameLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:layout_marginTop="15dp"
+        android:paddingLeft="30dp">
+
+
+        <ImageView
+            android:id="@+id/heart"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/heart256"
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:id="@+id/like_count"
+            android:layout_toRightOf="@+id/heart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="16,258"
+            android:textSize="20sp"
+            android:textColor="#165885"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:layout_toRightOf="@+id/like_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="likes"
+            android:textSize="20sp"
+            android:textColor="#165885"
+            android:layout_marginLeft="10dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/comment_section"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:paddingLeft="20dp">
+
+        <TextView
+            android:id="@+id/view_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="view all"
+            android:textSize="15sp"
+            android:textColor="#9fa4a9"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:id="@+id/comments_count"
+            android:layout_toRightOf="@+id/view_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="234"
+            android:textSize="15sp"
+            android:textColor="#9fa4a9"
+            android:layout_marginLeft="5dp" />
+
+        <TextView
+            android:id="@+id/comments"
+            android:layout_toRightOf="@+id/comments_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="comments"
+            android:textSize="15sp"
+            android:textColor="#9fa4a9"
+            android:layout_marginLeft="5dp" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/latest_comments_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingLeft="20dp"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+</LinearLayout>

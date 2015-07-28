@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="6dp"
+    android:paddingLeft="10dp"
+    android:paddingBottom="6dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/user_profile"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop = "5dp"
+        android:src="@drawable/user_profile_picture"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_toRightOf="@+id/user_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="chrisconnolly"
+        android:textSize="20sp"
+        android:textColor="#0a557f"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:id="@+id/comment_text"
+        android:layout_marginRight="15dp"
+        android:layout_below="@+id/username"
+        android:layout_alignLeft="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="comment!!comment!!comment!!comment!!comment!!comment!!comment!!"
+        android:textSize="20sp"
+        android:textColor="#3b444d" />
+
+    <ImageView
+        android:id="@+id/clock"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/clock"
+        android:layout_below="@+id/comment_text"
+        android:layout_alignLeft="@+id/username"
+        android:layout_marginTop="10dp"
+        android:alpha="0.3" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/comment_text"
+        android:layout_toRightOf="@+id/clock"
+        android:text="10000h"
+        android:textSize="15sp"
+        android:textColor="#b4b8bb"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        />
+
+
+</RelativeLayout>
+

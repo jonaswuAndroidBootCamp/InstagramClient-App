@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Instagram Client</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="client_id">162c6d40a8b74ed0899ae704ac27346f</string>
+    <string name="access_token">1973097164.162c6d4.fd0145f4254449e9813e538ae6935957</string>
+
+</resources>
