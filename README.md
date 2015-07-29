@@ -1,42 +1,45 @@
-# Project 1 - *Name of App Here*
+# Project 1 - *InstagramClient-App*
 
-**Name of your app** is an android app that allows a user to check out popular photos from Instagram. The app utilizes Instagram API to display images and basic image information to the user.
+**InstagramClient-App** is an android app that allows a user to check out popular photos from Instagram. The app utilizes Instagram API to display images and basic image information to the user.
 
-Time spent: **X** hours spent in total
+Time spent: **8** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
-* [ ] User can **scroll through current popular photos** from Instagram
-* [ ] For each photo displayed, user can see the following details:
-  * [ ] Graphic, Caption, Username
-  * [ ] Relative timestamp, like count, user profile image
+* [x] User can **scroll through current popular photos** from Instagram
+* [x] For each photo displayed, user can see the following details:
+* [x] Graphic, Caption, Username
+* [x] Relative timestamp, like count, user profile image
 
 The following **optional** features are implemented:
 
-* [ ] User can **pull-to-refresh** popular stream to get the latest popular photos
-* [ ] Show latest comments for each photo
-* [ ] Display each photo with the same style and proportions as the real Instagram
-* [ ] Display each user profile image using a RoundedImageViewDisplay each user profile image using a [RoundedImageView](https://github.com/vinc3m1/RoundedImageView)
-* [ ] Display a nice default placeholder graphic for each image during loading
-* [ ] Improved the user interface through styling and coloring
+* [x] User can **pull-to-refresh** popular stream to get the latest popular photos
+* [x] Show latest comments for each photo
+* [x] Display each photo with the same style and proportions as the real Instagram
+* [x] Display each user profile image using a RoundedImageViewDisplay each user profile image using a [RoundedImageView](https://github.com/vinc3m1/RoundedImageView)
+* [x] Display a nice default placeholder graphic for each image during loading
+* [x] Improved the user interface through styling and coloring
 
 The following **bonus** features are implemented:
 
-* [ ] Show last 2 comments for each photo
-* [ ] Allow user to view all comments for an image within a separate activity or dialog fragment
-* [ ] Allow video posts to be played in full-screen using the VideoView
+* [x] Show last 2 comments for each photo
+* [x] Allow user to view all comments for an image within a separate activity or dialog fragment
+* [x] Allow video posts to be played in full-screen using the VideoView
 
 The following **additional** features are implemented:
 
-* [ ] List anything else that you can get done to improve the app functionality!
+* [x] self-implement HTTP accessed libraries which uses `EventBus` as callback interface and `AsyncTask` for background
+* [x] Use [ActionbarSherlock](http://actionbarsherlock.com/) to show action bar, and fine-tune UI by ActionbarSherlock  `progress loading` when performing background http access
+* [x] fine-tune UI: click on picture to play video, and click `view more comments` followed by calling [get_media_comments](https://instagram.com/developer/endpoints/comments/#get_media_comments) for accessing more comments on background thread
+* [x] use [Robotium](https://code.google.com/p/robotium/) for simple smoke test
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='./demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -51,7 +54,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2015 Jonas Wu
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
