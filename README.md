@@ -8,10 +8,10 @@ Time spent: **X** hours spent in total
 
 The following **required** functionality is completed:
 
-* [ ] User can **scroll through current popular photos** from Instagram
+* [x] User can **scroll through current popular photos** from Instagram
 * [ ] For each photo displayed, user can see the following details:
-  * [ ] Graphic, Caption, Username
-  * [ ] Relative timestamp, like count, user profile image
+* [ ] Graphic, Caption, Username
+* [ ] Relative timestamp, like count, user profile image
 
 The following **optional** features are implemented:
 
