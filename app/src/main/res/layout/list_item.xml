@@ -73,7 +73,7 @@
 
             <ImageView
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
                 android:src="@drawable/demo"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
@@ -82,8 +82,8 @@
                 android:id="@+id/main_image" />
 
             <ImageView
-                android:layout_width="200dp"
-                android:layout_height="200dp"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
                 android:src="@drawable/play_icon"
                 android:id="@+id/play"
                 android:alpha="0.5"

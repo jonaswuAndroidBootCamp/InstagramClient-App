@@ -10,12 +10,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import androidcourse.android.jonaswu.yahoo.com.instagramclient.baselib.API;
-import androidcourse.android.jonaswu.yahoo.com.instagramclient.baselib.APIDelegator;
-import androidcourse.android.jonaswu.yahoo.com.instagramclient.baselib.BaseFragmentActivity;
+import androidcourse.android.jonaswu.yahoo.com.instagramclient.lib.API;
+import androidcourse.android.jonaswu.yahoo.com.instagramclient.lib.BaseFragmentActivity;
 
 
-public class MainActivity extends BaseFragmentActivity implements APIDelegator {
+public class MainActivity extends BaseFragmentActivity implements API.APIDelegator {
 
     private SwipeRefreshLayout swipeContainer;
     private MainItemAdapter adapter;
@@ -46,8 +45,6 @@ public class MainActivity extends BaseFragmentActivity implements APIDelegator {
                 android.R.color.holo_green_light,
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light);
-
-
         listView = (ListView) findViewById(R.id.mainlist);
     }
 
@@ -56,23 +53,18 @@ public class MainActivity extends BaseFragmentActivity implements APIDelegator {
         adapter.setPopCommentDiagDelegator(this.getEventBus());
         adapter.setPopVideoDiagDelegator(this.getEventBus());
         listView.setAdapter(adapter);
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//
-//            }
-//        });
-        new API().getPopular(this);
+        setSupportProgressBarIndeterminateVisibility(true);
+        new API("getPopular").getPopular(this);
 
     }
 
     public void fetchTimelineAsync(int page) {
-        new API().getPopular(this);
+        new API("getPopular").getPopular(this);
     }
 
 
     public void onEventMainThread(API.ReturnDataEvent dma) {
-        if (dma.path == "v1/media/popular") {
+        if (dma.identifier == "getPopular") {
             adapter.deleteAll();
             try {
                 JSONArray data = dma.data.getJSONArray("data");
@@ -94,6 +86,7 @@ public class MainActivity extends BaseFragmentActivity implements APIDelegator {
                 e.printStackTrace();
             }
         }
+        setSupportProgressBarIndeterminateVisibility(false);
     }
 
 
@@ -103,7 +96,7 @@ public class MainActivity extends BaseFragmentActivity implements APIDelegator {
             // showEditDialog(item.getJSONObject("comments").getJSONArray("data"));
             String mediaId = item.getString("id");
             setSupportProgressBarIndeterminateVisibility(true);
-            new API().getLastestCommentById(MainActivity.this, mediaId);
+            new API("getLastestCommentById").getLastestCommentById(MainActivity.this, mediaId);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -121,8 +114,8 @@ public class MainActivity extends BaseFragmentActivity implements APIDelegator {
 
     private void showCommentsDialog(JSONArray data) {
         FragmentManager fm = getSupportFragmentManager();
-        CommentsDialog commentsDialog = CommentsDialog.newInstance(data);
-        commentsDialog.show(fm, "fragment_edit_name");
+        CommentsFragment commentsFragment = CommentsFragment.newInstance(data);
+        commentsFragment.show(fm, "fragment_edit_name");
     }
 
 
@@ -134,8 +127,8 @@ public class MainActivity extends BaseFragmentActivity implements APIDelegator {
 
     private void showCommentsDialog(String mediaId) {
         FragmentManager fm = getSupportFragmentManager();
-        CommentsDialog commentsDialog = CommentsDialog.newInstance(mediaId);
-        commentsDialog.show(fm, "fragment_edit_name");
+        CommentsFragment commentsFragment = CommentsFragment.newInstance(mediaId);
+        commentsFragment.show(fm, "fragment_edit_name");
     }
 
     @Override

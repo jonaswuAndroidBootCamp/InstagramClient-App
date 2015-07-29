@@ -1,6 +1,7 @@
 package androidcourse.android.jonaswu.yahoo.com.instagramclient;
 
 import android.test.ActivityInstrumentationTestCase2;
+import android.widget.ListView;
 
 import com.robotium.solo.Solo;
 
@@ -39,11 +40,18 @@ public class MainListTest extends ActivityInstrumentationTestCase2 {
         super.tearDown();
     }
 
-    public void testRun() {
+    public void testRunAndNoCrash() {
         //Wait for activity: 'com.example.ExampleActivty'
         solo.waitForActivity("MainActivity", 2000);
-        solo.assertCurrentActivity("MainActivity", MainActivity.class);
         solo.clickInList(0);
-        //Clear the EditText editText1
+        solo.scrollDown();
+
+    }
+
+    public void testListViewShouldHaveItems() {
+        //Wait for activity: 'com.example.ExampleActivty'
+        ListView view = (ListView) solo.getCurrentActivity().findViewById(R.id.mainlist);
+        solo.waitForActivity("MainActivity", 2000);
+//        assertTrue(view.getAdapter().getCount() > 0);
     }
 }

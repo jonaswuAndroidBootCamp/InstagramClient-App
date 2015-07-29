@@ -15,7 +15,7 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import androidcourse.android.jonaswu.yahoo.com.instagramclient.baselib.CustomizedAdapter;
+import androidcourse.android.jonaswu.yahoo.com.instagramclient.lib.CustomizedAdapter;
 
 /**
  * Created by jonaswu on 2015/7/23.

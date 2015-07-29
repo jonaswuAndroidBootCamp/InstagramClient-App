@@ -10,6 +10,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -18,7 +19,7 @@ import org.json.JSONObject;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
-import androidcourse.android.jonaswu.yahoo.com.instagramclient.baselib.CustomizedAdapter;
+import androidcourse.android.jonaswu.yahoo.com.instagramclient.lib.CustomizedAdapter;
 import de.greenrobot.event.EventBus;
 
 /**
@@ -59,11 +60,14 @@ public class MainItemAdapter extends CustomizedAdapter {
                     }
                 }
             });
+
             TextView time = (TextView) v.findViewById(R.id.time);
-            // TextView comment = (TextView) v.findViewById(R.id.comment_text);
             ImageView userProfile = (ImageView) v.findViewById(R.id.user_profile);
             ImageView mainImage = (ImageView) v.findViewById(R.id.main_image);
             ImageView playOverlay = (ImageView) v.findViewById(R.id.play);
+
+            mainImage.setOnClickListener(null); // reset onclick listener
+            playOverlay.setVisibility(View.GONE);
 
             try {
                 p.getJSONObject("videos").getJSONObject("standard_resolution").getString("url");
@@ -104,10 +108,11 @@ public class MainItemAdapter extends CustomizedAdapter {
             likeCount.setText(p.getJSONObject("likes").getString("count"));
             commentCount.setText(p.getJSONObject("comments").getString("count"));
             // Picasso.with(context).load(p.getJSONObject("images").getJSONObject("standard_resolution").getString("url")).into(mainImage);
-            Glide.with(context).load(user.getString("profile_picture")).into(userProfile);
-            Glide.with(context)
+            Picasso.with(context).load(user.getString("profile_picture")).into(userProfile);
+            Picasso.with(context)
                     .load(p.getJSONObject("images").getJSONObject("standard_resolution").getString("url"))
                             // .placeholder(R.drawable.spiffygif_30x30)
+                    .placeholder(R.drawable.empty_image)
                     .into(mainImage);
 
 
