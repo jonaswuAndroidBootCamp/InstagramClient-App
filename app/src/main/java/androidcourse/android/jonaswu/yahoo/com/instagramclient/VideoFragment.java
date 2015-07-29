@@ -38,6 +38,7 @@ public class VideoFragment extends SherlockDialogFragment {
         mc.setMediaPlayer(videoView);
         Uri video = Uri.parse(this.url);
         videoView.setMediaController(mc);
+        videoView.setZOrderOnTop(true);
         videoView.canPause();
         videoView.setVideoURI(video);
         videoView.requestFocus();
